@@ -2,3 +2,8 @@
 *.css.map
 *.sass.map
 *.scss.map
+node_modules
+*.css
+.cache
+build
+.DS_Store
