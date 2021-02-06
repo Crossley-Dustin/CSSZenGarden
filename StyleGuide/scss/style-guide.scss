@@ -31,6 +31,10 @@ xPatterns
 .cd-wireframes div.cd-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @include MQ(S) {
+    display: block;
+  }
 }
 
 @import 'partials/navigation';
