@@ -1,40 +1,37 @@
 @import 'partials/reset';
 @import 'partials/prefix-mixins';
 @import 'partials/layout'; // responsive grid and media queries
-
 @import 'partials/colors';
-
-
 
 /* -------------------------------- 
 xBackground 
 -------------------------------- */
 
 body {
-  /* this is the page background */
-  background-color: #fff;
+    /* this is the page background */
+    background-color: #fff;
 }
+
 
 /* -------------------------------- 
 xPatterns
 -------------------------------- */
 
 .cd-box {
-  /* this is the container of various design elements - i.e. the 2 logo of the branding section */
-  border: 1px solid #fff;
-  border-radius: 3px;
-  background: #fff;
-  box-shadow: 0 1px 1px rgba(#000, 0.05);
-  padding: 6px;
+    /* this is the container of various design elements - i.e. the 2 logo of the branding section */
+    border: 1px solid #fff;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(#000, 0.05);
+    padding: 6px;
 }
 
 .cd-wireframes div.cd-box {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  @include MQ(S) {
     display: block;
-  }
+    @include MQ(S) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @import 'partials/navigation';
@@ -43,15 +40,13 @@ xPatterns
 xPage title 
 -------------------------------- */
 
-main > h1 {
-  color: $color-2;
-
-  @include MQ(L) {
-    /* title goes into the header on big devices */
-    color: $color-5;
-  }
+main>h1 {
+    color: $color-2;
+    @include MQ(L) {
+        /* title goes into the header on big devices */
+        color: $color-5;
+    }
 }
 
 @import 'partials/typography';
-
 @import 'partials/basic-style';
