@@ -1,80 +1,143 @@
 header {
     background-color: $color-2;
-  }
-  
-  .cd-logo {
+}
+
+.cd-logo {
     /* logo box style */
     background-color: $color-3;
     width: 120px;
-  
     @include MQ(M) {
-      width: 180px;
+        width: 180px;
     }
-  }
-  
-  .cd-main-nav {
+}
+
+.cd-main-nav {
     /* main navigation background color - full screen on small devices */
     background: $color-2;
-  
     li a {
-      color: $color-5;
-      border-color: lighten($color-2, 5%);
+        color: $color-5;
+        border-color: lighten($color-2, 5%);
     }
-  
     @include MQ(M) {
-      li a {
-        color: lighten($color-2, 40%);
-  
-        &.selected {
-          color: $color-5;
-          box-shadow: 0 2px 0 $color-1;
+        li a {
+            color: lighten($color-2, 40%);
+            &.selected {
+                color: $color-5;
+                box-shadow: 0 2px 0 $color-1;
+            }
+            &:hover {
+                color: $color-5;
+            }
         }
-  
-        &:hover {
-          color: $color-5;
-        }
-      }
     }
-  }
-  
-  .cd-nav-trigger span {
+}
+
+.cd-nav-trigger span {
     /* hamburger menu */
     background-color: #fff;
-  
     &::before,
     &::after {
-      /* upper and lower lines */
-      background-color: #fff;
+        /* upper and lower lines */
+        background-color: #fff;
     }
-  }
-  
-  .nav-is-visible .cd-nav-trigger span {
+}
+
+.nav-is-visible .cd-nav-trigger span {
     /* hide line in the center on mobile when nav is visible */
     background-color: rgba($color-5, 0);
-  
     &::before,
     &::after {
-      /* preserve visibility of upper and lower lines - close icon */
-      background-color: rgba($color-5, 1);
+        /* preserve visibility of upper and lower lines - close icon */
+        background-color: rgba($color-5, 1);
     }
-  }
-  
-  .cd-download {
+}
+
+.cd-download {
     /* download button top-right visible on big devices */
     background-color: lighten($color-2, 10%);
-  
     .no-touch &:hover {
-      background-color: lighten($color-2, 15%);
+        background-color: lighten($color-2, 15%);
     }
-  
     span {
-      /* tooltip */
-      background: $color-1;
-      color: $color-5;
-  
-      &::before {
-        /* right arrow color */
-        border-color: $color-1;
-      }
+        /* tooltip */
+        background: $color-1;
+        color: $color-5;
+        &::before {
+            /* right arrow color */
+            border-color: $color-1;
+        }
     }
-  }
+}
+
+
+/*
+.cd-primary-nav {
+    a::nth-of-type(2) {
+        background-image: url(/assets/candies-05.svg);
+    }
+}
+
+*/
+
+// Custom links - 
+// Primary - for design links
+.cd-primary-nav li {
+    padding: 3em 1em;
+    a {
+        background-image: url(/assets/candies-03.svg);
+        background-repeat: no-repeat;
+        /*background-size: 80%;*/
+        background-position: center;
+        width: 100px;
+        height: 100px;
+        display: block;
+        opacity: .8;
+        transition: background-image .5s ease-in;
+    }
+    /*
+    a::nth-child(1) {
+        background-image: url(/assets/candies-01.svg);
+    }
+    a::nth-child(2) {
+        background-image: url(/assets/candies-02.svg);
+    }
+    a::nth-child(3) {
+        background-image: url(/assets/candies-03.svg);
+    }
+    a::nth-child(4) {
+        background-image: url(/assets/candies-04.svg);
+    }
+    a::nth-child(5) {
+        background-image: url(/assets/candies-05.svg);
+    }
+    */
+    a:hover {
+        opacity: 1;
+        background-image: url(/assets/peppermint-03.svg);
+        /*background-size: 60%;*/
+        animation: candy-wiggle .5s ease-in;
+    }
+}
+
+@keyframes candy-wiggle {
+    0% {
+        background-position: center;
+        background-size: 80%;
+    }
+    25% {
+        background-position: right;
+        background-size: 50%
+    }
+    50% {
+        background-position: left;
+        background-size: 40%;
+    }
+    75% {
+        background-position: right;
+        background-size: 50%;
+    }
+    100% {
+        background-position: center;
+        /*background-size: 60%;*/
+    }
+}
