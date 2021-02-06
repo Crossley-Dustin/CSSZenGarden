@@ -1,18 +1,28 @@
 // fonts
-$primary-font: 'Merriweather', serif;
-$secondary-font: 'Open Sans', sans-serif;
+//Fira 300 weight
+/* <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@500&display=swap" rel="stylesheet">
+*/
+//Vollkorn 500 weight
+
+
+$primary-font: 'Playfair Display', serif;
+$secondary-font: 'Fira Sans Condensed', sans-serif;
 
 h1,
 h2 {
-  font-family: $secondary-font;
-  color: $color-2;
+  font-family: $primary-font;
 }
 
 h1 {
+  color: $color-2;
   font-size: 2.4rem;
   font-weight: 300;
   line-height: 1.2;
   margin: 0 0 0.4em;
+  letter-spacing: 0.05rem;
 
   @include MQ(S) {
     font-size: 3.2rem;
@@ -24,28 +34,31 @@ h1 {
 }
 
 h2 {
+  color: $color-1;
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: .35rem;
   margin: 1em 0;
 
   @include MQ(S) {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     margin: 1em 0 1.4em;
   }
 }
 
 section > h2::before {
   /* number before each section title */
-  color: darken($color-4, 15%);
+  color: $color-1;
 }
 
 p {
+  font-family: $secondary-font;
   font-size: 1.4rem;
   line-height: 1.4;
-  color: lighten($color-2, 25%);
+  color: darken($color-4, 15%);
 
   a {
-    color: $color-1;
+    color: $color-6;
     text-decoration: underline;
   }
 

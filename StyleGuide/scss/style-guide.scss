@@ -7,9 +7,7 @@
 
 
 /* -------------------------------- 
-
 xBackground 
-
 -------------------------------- */
 
 body {
@@ -18,9 +16,7 @@ body {
 }
 
 /* -------------------------------- 
-
 xPatterns
-
 -------------------------------- */
 
 .cd-box {
@@ -32,13 +28,15 @@ xPatterns
   padding: 6px;
 }
 
+.cd-wireframes div.cd-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
 @import 'partials/navigation';
 
 /* -------------------------------- 
-
 xPage title 
-
 -------------------------------- */
 
 main > h1 {
