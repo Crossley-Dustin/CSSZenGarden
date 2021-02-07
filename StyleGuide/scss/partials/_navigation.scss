@@ -69,64 +69,75 @@ header {
     }
 }
 
-
-/*
-.cd-primary-nav {
-    a::nth-of-type(2) {
-        background-image: url(/assets/candies-05.svg);
-    }
-}
-
-*/
-
 // Custom links - 
-// Primary - for design links
-.cd-primary-nav li {
+// Primary navigation settings - for design links
+.cd-primary-nav {
     padding: 3em 1em;
     a {
-        background-image: url(/assets/candies-03.svg);
         background-repeat: no-repeat;
-        /*background-size: 80%;*/
         background-position: center;
         width: 100px;
         height: 100px;
         display: block;
-        opacity: .8;
-        transition: background-image .5s ease-in;
-    }
-    /*
-    a::nth-child(1) {
-        background-image: url(/assets/candies-01.svg);
-    }
-    a::nth-child(2) {
-        background-image: url(/assets/candies-02.svg);
-    }
-    a::nth-child(3) {
-        background-image: url(/assets/candies-03.svg);
-    }
-    a::nth-child(4) {
-        background-image: url(/assets/candies-04.svg);
-    }
-    a::nth-child(5) {
-        background-image: url(/assets/candies-05.svg);
-    }
-    */
-    a:hover {
-        opacity: 1;
-        background-image: url(/assets/peppermint-03.svg);
-        /*background-size: 60%;*/
-        animation: candy-wiggle .5s ease-in;
+        opacity: .9;
+        transition: background-image .4s ease-in;
     }
 }
 
+// Set the candy backgrounds
+.cd-primary-nav {
+    li:nth-of-type(1) a {
+        background-image: url(/assets/candies-01.svg);
+    }
+    li:nth-of-type(2) a {
+        background-image: url(/assets/candies-02.svg);
+    }
+    li:nth-of-type(3) a {
+        background-image: url(/assets/candies-03.svg);
+    }
+    li:nth-of-type(4) a {
+        background-image: url(/assets/candies-04.svg);
+    }
+    li:nth-of-type(5) a {
+        background-image: url(/assets/candies-05.svg);
+    }
+}
+
+// Set basic candy hover properties
+.cd-primary-nav a:hover {
+    opacity: 1;
+    animation: candy-wiggle .4s ease-in;
+}
+
+// Set the hover candy images
+.cd-primary-nav {
+    li:nth-of-type(1) a:hover {
+        background-image: url(/assets/peppermint-01.svg);
+    }
+    li:nth-of-type(2) a:hover {
+        background-image: url(/assets/peppermint-02.svg);
+    }
+    li:nth-of-type(3) a:hover {
+        background-image: url(/assets/peppermint-03.svg);
+    }
+    li:nth-of-type(4) a:hover {
+        background-image: url(/assets/peppermint-04.svg);
+    }
+    li:nth-of-type(5) a:hover {
+        background-image: url(/assets/peppermint-05.svg);
+    }
+}
+
+// Make the image move R-L-R and back to center
 @keyframes candy-wiggle {
     0% {
         background-position: center;
-        background-size: 80%;
+        background-size: 100%;
+        /*80%*/
     }
     25% {
         background-position: right;
-        background-size: 50%
+        background-size: 70%;
     }
     50% {
         background-position: left;
@@ -134,10 +145,10 @@ header {
     }
     75% {
         background-position: right;
-        background-size: 50%;
+        background-size: 70%;
     }
     100% {
         background-position: center;
-        /*background-size: 60%;*/
+        background-size: 100%;
     }
 }
