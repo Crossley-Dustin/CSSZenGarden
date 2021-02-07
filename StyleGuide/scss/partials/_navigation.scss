@@ -69,15 +69,20 @@ header {
     }
 }
 
-// Custom links - 
+// h3 header color
+h3 {
+    color: $color-2;
+}
+
+// Custom Nav links - 
 // Primary navigation settings - for design links
 .cd-primary-nav {
     padding: 3em 1em;
     a {
         background-repeat: no-repeat;
         background-position: center;
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
         display: block;
         opacity: .9;
         transition: background-image .4s ease-in;
@@ -152,3 +157,96 @@ header {
         background-size: 100%;
     }
 }
+
+// Secondary navigation settings - for footer links
+.cd-secondary-nav {
+    padding: 3em 1em;
+    a {
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100px;
+        height: 100px;
+        display: block;
+        opacity: .9;
+        transition: background-image .4s ease-in;
+    }
+}
+
+// Set the candy backgrounds
+.cd-secondary-nav {
+    li:nth-of-type(1) a {
+        background-image: url(/assets/jellybeans-01.svg);
+    }
+    li:nth-of-type(2) a {
+        background-image: url(/assets/jellybeans-02.svg);
+    }
+    li:nth-of-type(3) a {
+        background-image: url(/assets/jellybeans-03.svg);
+    }
+    li:nth-of-type(4) a {
+        background-image: url(/assets/jellybeans-04.svg);
+    }
+    li:nth-of-type(5) a {
+        background-image: url(/assets/jellybeans-05.svg);
+    }
+}
+
+// Set basic candy hover properties
+.cd-secondary-nav a:hover {
+    opacity: 1;
+    animation: candy-jump .4s ease-in;
+}
+
+// Make the image jump and get bigger
+@keyframes candy-jump {
+    0% {
+        background-size: 100%;
+    }
+    25% {
+        background-size: 101%;
+        background-position: bottom;
+    }
+    50% {
+        background-size: 101%;
+        background-position: top;
+    }
+    75% {
+        background-size: 102%;
+        background-position: bottom;
+    }
+    100% {
+        background-size: 103%;
+        background-position: top;
+    }
+}
+
+// Rotate candy
+
+/*
+@-webkit-keyframes candy-rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(720deg);
+    }
+}
+
+@-moz-keyframes candy-rotate {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(720deg);
+    }
+}
+
+@keyframes candy-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(720deg);
+    }
+}
+*/

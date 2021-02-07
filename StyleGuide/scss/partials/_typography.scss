@@ -1,61 +1,65 @@
 // fonts
-
-$primary-font: 'Playfair Display', serif;
-$secondary-font: 'Fira Sans Condensed', sans-serif;
-
+$primary-font: 'Playfair Display',
+serif;
+$secondary-font: 'Fira Sans Condensed',
+sans-serif;
 h1,
 h2 {
-  font-family: $primary-font;
+    font-family: $primary-font;
+}
+
+h3 {
+    font-weight: bold;
 }
 
 h1 {
-  color: $color-2;
-  font-size: 2.4rem;
-  font-weight: 300;
-  line-height: 1.2;
-  margin: 0 0 0.4em;
-  letter-spacing: 0.05rem;
-
-  @include MQ(S) {
-    font-size: 3.2rem;
-  }
-
-  @include MQ(M) {
-    font-size: 4rem;
-  }
+    color: $color-2;
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 0 0 0.4em;
+    letter-spacing: 0.05rem;
+    @include MQ(S) {
+        font-size: 3.2rem;
+    }
+    @include MQ(M) {
+        font-size: 4rem;
+    }
 }
 
 h2 {
-  color: $color-1;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: .35rem;
-  margin: 1em 0;
-
-  @include MQ(S) {
-    font-size: 2.5rem;
-    margin: 1em 0 1.4em;
-  }
+    color: $color-1;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .35rem;
+    margin: 1em 0;
+    @include MQ(S) {
+        font-size: 2.5rem;
+        margin: 1em 0 1.4em;
+    }
 }
 
-section > h2::before {
-  /* number before each section title */
-  color: $color-1;
+section>h2::before {
+    /* number before each section title */
+    color: $color-1;
 }
 
 p {
-  font-family: $secondary-font;
-  font-size: 1.4rem;
-  line-height: 1.4;
-  color: darken($color-4, 15%);
+    font-family: $secondary-font;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: darken($color-4, 15%);
+    a {
+        color: $color-6;
+        text-decoration: underline;
+    }
+    @include MQ(S) {
+        font-size: 1.6rem;
+        line-height: 1.6;
+    }
+}
 
-  a {
-    color: $color-6;
-    text-decoration: underline;
-  }
-
-  @include MQ(S) {
-    font-size: 1.6rem;
-    line-height: 1.6;
-  }
+.cd-navigation a {
+    font-family: $secondary-font;
+    font-weight: bold;
 }
