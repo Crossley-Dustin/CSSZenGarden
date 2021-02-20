@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap');
+
+$primary-font: 'Playfair Display', serif;
+$secondary-font: 'Fira Sans Condensed', sans-serif;
+
+h2 {
+  font-family: $primary-font;
+  color: $color-2;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 0.4em;
+  letter-spacing: 0.05rem;
+}
+
+h3 {
+  font-family: $primary-font;
+  color: $color-1;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .35rem;
+  margin: 1em 0;
+}
+
+p, li {
+  font-family: $secondary-font;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: darken($color-4, 15%);
+}
+
+a {
+  color: $color-6;
+  text-decoration: none;
+}
+
+.design-name {
+  
+  text-transform: uppercase;
+  letter-spacing: .15rem;
+  color: $color-5;
+}
+
+.designer-name {
+  color: darken($color-4, 15%);
+}
