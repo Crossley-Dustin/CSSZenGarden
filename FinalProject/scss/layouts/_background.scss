@@ -1,0 +1,12 @@
+body {
+	background-image: url(assets/mobile-path-01.svg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+@media only screen and (min-width: 36rem) {
+  body {
+    background-image: url(assets/path.svg);
+    background-size: 100%;
+  }
+}

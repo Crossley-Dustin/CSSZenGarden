@@ -1,0 +1,123 @@
+//logo svg inserted before .intro section
+.intro:before {
+  display: block;
+  content: ' ';
+  background-image: url(assets/logo.svg);
+  background-repeat: no-repeat;
+  max-width: 500px;
+  height: auto;
+}
+
+//grid one for section .intro - header, summary and road to enlightenment
+.intro {
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: repeat(3, auto);
+
+  h1 {
+    display: none;
+  }
+}
+
+//grid two for div .supporting - about, participation, benefits, requirements and footer
+.supporting {
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: repeat(4, auto);
+}
+
+//header and summary styling
+header,
+.summary {
+  background-color: #fff;
+  padding: 0 1rem;
+  margin: 0;
+  min-width: 200px;
+  height: auto;
+}
+
+//styling for paragraphs - note .preamble is from grid one and the rest are from grid two
+.preamble,
+.explanation,
+.participation,
+.benefits,
+.requirements,
+footer {
+  background-color: #fff;
+  padding: 1rem;
+  margin: 2rem 0;
+  min-width: 200px;
+  height: auto;
+  border-radius: .5rem;
+}
+
+@media only screen and (min-width: 36rem) {
+
+  //name the template areas for grid one
+  header {
+    grid-area: byline;
+  }
+
+  .summary {
+    grid-area: summary;
+  }
+
+  .preamble {
+    grid-area: preamble;
+  }
+
+  //define the template areas for grid one
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "byline byline . ."
+      "summary summary . ."
+      ". preamble . .";
+  }
+
+  //name the template areas for grid two
+  .explanation {
+    grid-area: explanation;
+    padding: 2rem;
+  }
+
+  .participation {
+    grid-area: participation;
+  }
+
+  .benefits {
+    grid-area: benefits;
+  }
+
+  .requirements {
+    grid-area: requirements;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  //define the template areas for grid two
+  .supporting {
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      ". . explanation ."
+      ". participation . ."
+      ". . benefits ."
+      ". requirements . ."
+      ". footer . .";
+  }
+
+  //styling for paragraphs - note .preamble is from grid one and the rest are from grid two
+  .preamble,
+  .explanation,
+  .participation,
+  .benefits,
+  .requirements {
+    max-width: 600px;
+    height: auto;
+  }
+}
