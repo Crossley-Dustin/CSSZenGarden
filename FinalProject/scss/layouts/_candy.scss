@@ -1,37 +1,137 @@
 //grid for candy - list inside a role="navigation"
 .design-selection nav[role=navigation] ul {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  gap: 10px;
-  list-style: none;
-  margin: 1rem auto;
-  padding: 1rem;
-  max-width: 200px;
-}
-
-//pull the candy svg image in
-.design-name {
-  display: block;
-  //content: ' '; 
-  //I don't know if content: ' '; is needed
-  background-image: url(assets/peppermint-01.svg);
-  background-repeat: no-repeat;
-  max-width: 300px;
-  height: auto;
-}
-
-@media only screen and (min-width: 36rem) {
-
-  //grid for candy - list inside a role="navigation"
-  .design-selection nav[role=navigation] ul {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     gap: 10px;
     list-style: none;
     margin: 1rem auto;
     padding: 1rem;
-    max-width: 1200px;
-  }
+    max-width: 200px;
+}
+
+// --
+
+/*
+//pull the candy svg image in
+.design-name {
+    display: block;
+    //content: ' '; 
+    //I don't know if content: ' '; is needed
+    background-image: url(assets/peppermint-01.svg);
+    background-repeat: no-repeat;
+    max-width: 300px;
+    height: auto;
+}
+*/
+
+.design-selection nav ul li {
+    display: block;
+    outline: green solid 1px;
+    //background-image: url(assets/candies-01.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    max-width: 18rem;
+    min-height: 3rem;
+    height: 6rem;
+    text-align: right;
+    opacity: .85;
+    transition: background-image .4s ease-in;
+}
+
+// loop for candy backgrounds
+@for $index from 1 to 9 {
+    .design-selection li:nth-of-type(#{$index}) {
+        background-image: url(assets/candies-0#{$index}.svg);
+    }
+}
+
+
+/*
+// Set the candy backgrounds
+.design-selection nav ul li:nth-of-type(2) {
+    background-image: url(assets/candies-02.svg);
+}
+*/
+
+// Set basic candy hover properties
+//.design-name nav ul
+.design-selection li:hover {
+    opacity: 1;
+    animation: candy-wiggle .4s ease-in;
+    //background-color: lime;
+}
+
+// loop for candy hovers
+@for $index from 1 to 9 {
+    .design-selection li:nth-of-type(#{$index}):hover {
+        background-image: url(assets/peppermint-0#{$index}.svg);
+    }
+}
+
+
+/*
+// Set the hover candy images
+.design-selection {
+    li:nth-of-type(2):hover {
+        background-image: url(/assets/peppermint-02.svg);
+    }
+}
+*/
+
+
+/*
+.design-selection nav ul li::before {
+    content: "";
+    position: absolute;
+    height: 2.5rem;
+    width: 2rem;
+    //left: 0rem;
+    background-color: rebeccapurple;
+}
+*/
+
+.design-selection nav ul li a {
+    outline: blue solid 1px;
+    float: right;
+}
+
+// Make the image move R-L-R and back to center
+@keyframes candy-wiggle {
+    0% {
+        background-position: center;
+        background-size: 100%;
+        /*80%*/
+    }
+    25% {
+        background-position: right;
+        background-size: 70%;
+    }
+    50% {
+        background-position: left;
+        background-size: 40%;
+    }
+    75% {
+        background-position: right;
+        background-size: 70%;
+    }
+    100% {
+        background-position: center;
+        background-size: 100%;
+    }
+}
+
+// --
+@media only screen and (min-width: 36rem) {
+    //grid for candy - list inside a role="navigation"
+    .design-selection nav[role=navigation] ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+        list-style: none;
+        margin: 1rem auto;
+        padding: 1rem;
+        max-width: 1200px;
+    }
 }
