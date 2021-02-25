@@ -1,0 +1,47 @@
+// aside container
+.wrapper {
+    display: grid;
+}
+
+.wrapper {
+    grid-template-columns: 1;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "archives" "resources" "designs";
+}
+
+@media only screen and (min-width: 36rem) {
+    .wrapper {
+        grid-template-columns: 1fr 2fr 2fr 1fr;
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas: ". archives resources ." "designs designs designs designs";
+    }
+}
+
+.design-archives {
+    grid-area: archives;
+}
+
+.zen-resources {
+    grid-area: resources;
+}
+
+.design-selection {
+    grid-area: designs;
+}
+
+@media only screen and (min-width: 36rem) {
+    .design-selection {
+        //grid-area: designs;
+        grid-row-start: 2;
+        grid-column: 1 / -1;
+    }
+}
+
+
+/*
+.zen-resources,
+.design-selection,
+.design-archives {
+    max-width: 600px;
+}
+*/

@@ -8,6 +8,7 @@
     margin: 1rem auto;
     padding: 1rem;
     max-width: 200px;
+    max-width: 100%;
 }
 
 // --
@@ -30,10 +31,12 @@
     outline: green solid 1px;
     //background-image: url(assets/candies-01.svg);
     background-repeat: no-repeat;
-    background-position: left;
+    //background-position: left;
+    padding: .5rem;
     max-width: 18rem;
     min-height: 3rem;
-    height: 6rem;
+    //height: 6rem;
+    //width: 16rem;
     text-align: right;
     opacity: .85;
     transition: background-image .4s ease-in;
@@ -93,7 +96,7 @@
 
 .design-selection nav ul li a {
     outline: blue solid 1px;
-    float: right;
+    //float: bottom;
 }
 
 // Make the image move R-L-R and back to center
@@ -104,15 +107,15 @@
         /*80%*/
     }
     25% {
-        background-position: right;
+        background-position: left;
         background-size: 70%;
     }
     50% {
-        background-position: left;
+        background-position: right;
         background-size: 40%;
     }
     75% {
-        background-position: right;
+        background-position: left;
         background-size: 70%;
     }
     100% {
