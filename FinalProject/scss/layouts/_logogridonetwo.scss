@@ -1,21 +1,41 @@
 //logo svg inserted before .intro section
 .intro:before {
-  display: block;
   content: ' ';
-  background-image: url(assets/logo.svg);
-  background-repeat: no-repeat;
-  max-width: 500px;
-  height: auto;
+  grid-column: 3 / 5;
+  width: 450px;
+  height: 159px;
+  background: url(assets/logo.svg);
+  background-size: 450px 159px ;
 }
 
 //grid one for section .intro - header, summary and road to enlightenment
-.intro {
+section.intro {
   display: grid;
-  grid-template-columns: 1;
-  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+
+  header {
+    grid-column: 3 / 6;
+    grid-row: 2;
+  }
 
   h1 {
     display: none;
+  }
+
+  .summary {
+    background-color: #fff;
+    grid-column: 3 / 5;
+    grid-row: 3 / 4;
+    padding: 0 1rem;
+    margin: 0;
+    min-width: 200px;
+    height: auto;
+  }
+  
+  .preamble {
+    grid-column: 2 / 4;
+    grid-row: 4;
   }
 }
 
@@ -27,14 +47,7 @@
 }
 
 //header and summary styling
-header,
-.summary {
-  background-color: #fff;
-  padding: 0 1rem;
-  margin: 0;
-  min-width: 200px;
-  height: auto;
-}
+
 
 //styling for paragraphs - note .preamble is from grid one and the rest are from grid two
 .preamble,
