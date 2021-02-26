@@ -1,0 +1,36 @@
+// aside container
+.wrapper {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "archives" "resources" "designs";
+}
+
+// set grid areas
+.design-archives {
+    grid-area: archives;
+}
+
+.zen-resources {
+    grid-area: resources;
+}
+
+.design-selection {
+    grid-area: designs;
+}
+
+@media only screen and (min-width: $med-break) {
+    .wrapper {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: ". archives archives ." ". resources resources ." "designs designs designs designs";
+    }
+}
+
+@media only screen and (min-width: $xlrg-break) {
+    .wrapper {
+        grid-template-columns: 1fr 3fr 3fr 2fr;
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas: ". archives resources ." "designs designs designs designs";
+    }
+}

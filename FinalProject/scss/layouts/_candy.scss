@@ -1,37 +1,89 @@
 //grid for candy - list inside a role="navigation"
 .design-selection nav[role=navigation] ul {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  gap: 10px;
-  list-style: none;
-  margin: 1rem auto;
-  padding: 1rem;
-  max-width: 200px;
-}
-
-//pull the candy svg image in
-.design-name {
-  display: block;
-  //content: ' '; 
-  //I don't know if content: ' '; is needed
-  background-image: url(assets/peppermint-01.svg);
-  background-repeat: no-repeat;
-  max-width: 300px;
-  height: auto;
-}
-
-@media only screen and (min-width: 36rem) {
-
-  //grid for candy - list inside a role="navigation"
-  .design-selection nav[role=navigation] ul {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     gap: 10px;
     list-style: none;
     margin: 1rem auto;
     padding: 1rem;
-    max-width: 1200px;
-  }
+    max-width: 200px;
+    max-width: 100%;
+}
+
+.design-selection nav ul li {
+    display: block;
+    //outline: green solid 1px;
+    background-repeat: no-repeat;
+    padding: .5rem;
+    max-width: 18rem;
+    min-height: 3rem;
+    text-align: right;
+    opacity: .95;
+    transition: background-image .4s ease-in;
+}
+
+// loop for candy backgrounds
+@for $index from 1 to 9 {
+    .design-selection li:nth-of-type(#{$index}) {
+        background-image: url(assets/candies-0#{$index}.svg);
+    }
+}
+
+// Set basic candy hover properties
+.design-selection li:hover {
+    opacity: 1;
+    animation: candy-wiggle .4s ease-in;
+}
+
+// loop for candy hovers
+@for $index from 1 to 9 {
+    .design-selection li:nth-of-type(#{$index}):hover {
+        background-image: url(assets/peppermint-0#{$index}.svg);
+    }
+}
+
+
+/*
+// Select a tags for design links
+.design-selection nav ul li a {
+    outline: blue solid 1px;
+}
+*/
+
+// Make the image move R-L-R and back to center
+@keyframes candy-wiggle {
+    0% {
+        background-position: center;
+        background-size: 40%;
+        /*80%*/
+    }
+    25% {
+        background-position: left;
+        background-size: 70%;
+    }
+    50% {
+        background-position: right;
+        background-size: 40%;
+    }
+    75% {
+        background-position: left;
+        background-size: 70%;
+    }
+    100% {
+        background-position: center;
+        background-size: 100%;
+    }
+}
+
+// --
+@media only screen and (min-width: $med-break) {
+    //grid for candy - list inside a role="navigation"
+    .design-selection nav[role=navigation] ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+        list-style: none;
+    }
 }
