@@ -11,34 +11,15 @@
     max-width: 100%;
 }
 
-// --
-
-/*
-//pull the candy svg image in
-.design-name {
-    display: block;
-    //content: ' '; 
-    //I don't know if content: ' '; is needed
-    background-image: url(assets/peppermint-01.svg);
-    background-repeat: no-repeat;
-    max-width: 300px;
-    height: auto;
-}
-*/
-
 .design-selection nav ul li {
     display: block;
-    outline: green solid 1px;
-    //background-image: url(assets/candies-01.svg);
+    //outline: green solid 1px;
     background-repeat: no-repeat;
-    //background-position: left;
     padding: .5rem;
     max-width: 18rem;
     min-height: 3rem;
-    //height: 6rem;
-    //width: 16rem;
     text-align: right;
-    opacity: .85;
+    opacity: .95;
     transition: background-image .4s ease-in;
 }
 
@@ -49,20 +30,10 @@
     }
 }
 
-
-/*
-// Set the candy backgrounds
-.design-selection nav ul li:nth-of-type(2) {
-    background-image: url(assets/candies-02.svg);
-}
-*/
-
 // Set basic candy hover properties
-//.design-name nav ul
 .design-selection li:hover {
     opacity: 1;
     animation: candy-wiggle .4s ease-in;
-    //background-color: lime;
 }
 
 // loop for candy hovers
@@ -74,36 +45,17 @@
 
 
 /*
-// Set the hover candy images
-.design-selection {
-    li:nth-of-type(2):hover {
-        background-image: url(/assets/peppermint-02.svg);
-    }
-}
-*/
-
-
-/*
-.design-selection nav ul li::before {
-    content: "";
-    position: absolute;
-    height: 2.5rem;
-    width: 2rem;
-    //left: 0rem;
-    background-color: rebeccapurple;
-}
-*/
-
+// Select a tags for design links
 .design-selection nav ul li a {
     outline: blue solid 1px;
-    //float: bottom;
 }
+*/
 
 // Make the image move R-L-R and back to center
 @keyframes candy-wiggle {
     0% {
         background-position: center;
-        background-size: 100%;
+        background-size: 40%;
         /*80%*/
     }
     25% {
@@ -125,7 +77,7 @@
 }
 
 // --
-@media only screen and (min-width: 36rem) {
+@media only screen and (min-width: $med-break) {
     //grid for candy - list inside a role="navigation"
     .design-selection nav[role=navigation] ul {
         display: grid;
@@ -133,8 +85,5 @@
         grid-template-rows: 1fr 1fr;
         gap: 10px;
         list-style: none;
-        margin: 1rem auto;
-        padding: 1rem;
-        max-width: 1200px;
     }
 }

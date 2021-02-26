@@ -5,8 +5,10 @@ $color-4: #3993eb; // Blue
 $color-5: #f47149; // Orange
 $color-6: #5fa354; // Green
 $color-7: #fe89b3; // Pink
-
 // additional colors
-
 $success: #5fa354; // green
 $alert: $color-1; // red
+// Media Query breaks
+$med-break: 36rem;
+$lrg-break: 50rem;
+$xlrg-break: 76rem;

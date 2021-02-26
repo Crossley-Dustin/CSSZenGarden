@@ -1,3 +1,23 @@
 //@media only screen and (min-width: 36rem) {
 //coming soon. it's going to be amyazing
 //}
+footer {
+    position: relative;
+    top: 12.5rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    a:nth-child(1)::after {
+        content: ' | '
+    }
+    a:nth-child(2)::after {
+        content: ' | '
+    }
+    a:nth-child(3):after {
+        content: '  |  '
+    }
+    a:nth-child(4):after {
+        content: '  |  '
+    }
+}
