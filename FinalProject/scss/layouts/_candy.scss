@@ -21,6 +21,9 @@
     text-align: right;
     opacity: .95;
     transition: background-image .4s ease-in;
+    a {
+        display: block;
+    }
 }
 
 // loop for candy backgrounds

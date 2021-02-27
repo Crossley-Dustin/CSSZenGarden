@@ -1,7 +1,7 @@
 //logo svg inserted before .intro section
 .intro:before {
     content: ' ';
-    grid-column: 3 / 5;
+    grid-column: 1 / 5;
     width: 450px;
     height: 159px;
     background: url(assets/logo.svg);
@@ -11,18 +11,20 @@
 //grid one for section .intro - header, summary and road to enlightenment
 section.intro {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
     header {
-        grid-column: 3 / 6;
+        grid-column: 1;
         grid-row: 2;
+        background-color: #fff;
+        padding: 0 1rem;
     }
     h1 {
         display: none;
     }
     .summary {
         background-color: #fff;
-        grid-column: 3 / 5;
+        grid-column: 1;
         grid-row: 3 / 4;
         padding: 0 1rem;
         margin: 0;
@@ -30,7 +32,7 @@ section.intro {
         height: auto;
     }
     .preamble {
-        grid-column: 2 / 4;
+        grid-column: 1;
         grid-row: 4;
     }
 }
@@ -58,7 +60,51 @@ footer {
     border-radius: .5rem;
 }
 
+footer {
+    margin-top: -4rem;
+}
+
 @media only screen and (min-width: $med-break) {
+    //logo svg inserted before .intro section
+.intro:before {
+    content: ' ';
+    grid-column: 3 / 5;
+    width: 450px;
+    height: 159px;
+    background: url(assets/logo.svg);
+    background-size: 450px 159px;
+}
+
+//grid one for section .intro - header, summary and road to enlightenment
+section.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    header {
+        grid-column: 3 / 5;
+        grid-row: 2;
+        background-color: #fff;
+        padding: 0 1rem;
+    }
+    h1 {
+        display: none;
+    }
+    .summary {
+        background-color: #fff;
+        grid-column: 3 / 5;
+        grid-row: 3 / 4;
+        padding: 0 1rem;
+        margin: 0;
+        min-width: 200px;
+        height: auto;
+    }
+    .preamble {
+        grid-column: 2 / 4;
+        grid-row: 4;
+    }
+}
+
+
     //name the template areas for grid one
     header {
         grid-area: byline;

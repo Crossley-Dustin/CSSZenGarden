@@ -19,11 +19,28 @@
     grid-area: designs;
 }
 
+.design-archives, .zen-resources, .design-selection {
+    background-color: #fff;
+    padding: 0;
+    margin-top: -1rem;
+    min-width: 100px;
+    height: auto;
+    border-radius: .5rem;
+}
+
 @media only screen and (min-width: $med-break) {
     .wrapper {
         grid-template-columns: 1fr 2fr 1fr;
         grid-template-rows: repeat(3, auto);
-        grid-template-areas: ". archives archives ." ". resources resources ." "designs designs designs designs";
+        grid-template-areas: 
+        ". archives archives ." 
+        ". resources resources ." 
+        "designs designs designs designs";
+    }
+
+    .design-archives, .zen-resources {
+        position: relative;
+        left: -4.85rem;
     }
 }
 

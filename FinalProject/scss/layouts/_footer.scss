@@ -2,12 +2,13 @@
 //coming soon. it's going to be amyazing
 //}
 footer {
-    position: relative;
-    top: 12.5rem;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    padding: 0;
+   // position: relative;
+    //top: 0;
+    //left: 0;
+    //bottom: 0;
+   //@at-root right: 0;
+   // padding: 0;
+   margin-top: -40rem;
     a:nth-child(1)::after {
         content: ' | '
     }
