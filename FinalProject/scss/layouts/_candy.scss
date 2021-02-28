@@ -84,6 +84,17 @@
     //grid for candy - list inside a role="navigation"
     .design-selection nav[role=navigation] ul {
         display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 10px;
+        list-style: none;
+    }
+}
+
+@media only screen and (min-width: $lrg-break) {
+    //grid for candy - list inside a role="navigation"
+    .design-selection nav[role=navigation] ul {
+        display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr 1fr;
         gap: 10px;
