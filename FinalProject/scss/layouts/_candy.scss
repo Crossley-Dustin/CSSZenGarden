@@ -10,7 +10,7 @@
 }
 
 .design-selection {
-    text-align: center;
+    text-align: left;
 }
 
 .design-selection nav ul li {
@@ -18,7 +18,7 @@
     grid-template-columns: 100%;
     grid-template-rows: 1fr 5fr 1fr;
     grid-template-areas: "design-name" "candy" "designer-name";
-    text-align: center;
+    text-align: left;
     background-repeat: no-repeat;
     background-size: 9rem;
     background-position-y: center;
@@ -28,20 +28,27 @@
     transition: background-image .4s ease-in;
     font-size: .0rem;
     //outline: green solid 1px;
+    margin-top: 1.25rem;
 }
 
 .design-name {
     grid-area: design-name;
     font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: $color-5;
 }
 
 .designer-name {
     grid-area: designer-name;
-    font-size: 1rem;
+    font-size: .8rem;
+    color: darken($color-4, 15%);
 }
 
 .designer-name:before {
     content: "by ";
+    font-size: .8rem;
+    color: darken($color-4, 15%);
 }
 
 // loop for candy backgrounds
@@ -93,6 +100,16 @@
 // --
 @media only screen and (min-width: $med-break) {
     //grid for candy - list inside a role="navigation"
+    h3.select {
+        text-align: center;
+        margin-top: 2.5rem;
+        margin-bottom: 0;
+    }
+
+    h3.archives {
+        margin-bottom: 0;
+    }
+
     .design-selection nav[role=navigation] ul {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -101,12 +118,21 @@
         column-gap: .25rem;
         padding: .25rem;
     }
+    
+    #design-selection ul {
+        margin-top: 0;
+    }
+
+
     .design-selection nav ul li {
         min-width: 17rem;
+        text-align: center;
     }
-    .design-name,
-    .designer-name {
-        font-size: 1.25rem;
+    .design-name {
+        font-size: 1.2rem;
+    }
+    .designer-name, .designer-name:before {
+        font-size: 1rem;
     }
 }
 
@@ -117,9 +143,14 @@
     .design-selection nav ul li {
         min-width: 15rem;
     }
-    .design-name,
-    .designer-name {
-        font-size: 1.45rem;
+    .design-selection nav ul li {
+        min-width: 17rem;
+    }
+    .design-name {
+        font-size: 1.25rem;
+    }
+    .designer-name, .designer-name:before {
+        font-size: 1rem;
     }
 }
 
