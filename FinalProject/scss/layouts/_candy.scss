@@ -22,7 +22,7 @@
     background-repeat: no-repeat;
     background-size: 9rem;
     background-position-y: center;
-    background-position-x: center;
+    background-position-x: left;
     min-width: 14rem;
     opacity: .95;
     transition: background-image .4s ease-in;
@@ -105,11 +105,9 @@
         margin-top: 2.5rem;
         margin-bottom: 0;
     }
-
     h3.archives {
         margin-bottom: 0;
     }
-
     .design-selection nav[role=navigation] ul {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -118,20 +116,19 @@
         column-gap: .25rem;
         padding: .25rem;
     }
-    
     #design-selection ul {
         margin-top: 0;
     }
-
-
     .design-selection nav ul li {
         min-width: 17rem;
         text-align: center;
+        background-position-x: center;
     }
     .design-name {
         font-size: 1.2rem;
     }
-    .designer-name, .designer-name:before {
+    .designer-name,
+    .designer-name:before {
         font-size: 1rem;
     }
 }
@@ -149,7 +146,8 @@
     .design-name {
         font-size: 1.25rem;
     }
-    .designer-name, .designer-name:before {
+    .designer-name,
+    .designer-name:before {
         font-size: 1rem;
     }
 }
