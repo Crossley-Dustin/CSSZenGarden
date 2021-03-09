@@ -1,12 +1,25 @@
 body {
 	background-image: url(assets/mobile-path-01.svg);
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: 510px;
+  min-width: 360px;
 }
 
-@media only screen and (min-width: 36rem) {
+@media only screen and (min-width: $med-break) { 
+
   body {
-    background-image: url(assets/path.svg);
-    background-size: 100%;
+    background-image: url(assets/med-path-01.svg);
+    background-position: center top;
+    background-size: 700px;
   }
+
+}
+
+@media only screen and (min-width: $lrg-break) {
+  body {
+    background-image: url(assets/path-01.svg);
+    background-position: center top;
+    background-size: 900px;
+  }
+
 }

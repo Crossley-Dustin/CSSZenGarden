@@ -28,6 +28,16 @@
     border-radius: .5rem;
 }
 
+.explanation, .participation, .benefits, .requirements {
+    max-width: 300px;
+    margin: 50px auto;
+
+}
+
+.requirements {
+    margin-bottom: 200px;
+}
+
 @media only screen and (min-width: $med-break) {
     .wrapper {
         grid-template-columns: 1fr 2fr 1fr;

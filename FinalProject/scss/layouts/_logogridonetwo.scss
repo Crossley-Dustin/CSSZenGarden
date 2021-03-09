@@ -30,10 +30,14 @@ section.intro {
         margin: 0;
         min-width: 200px;
         height: auto;
+        max-width: 300px;
+    
     }
     .preamble {
         grid-column: 1;
         grid-row: 4;
+        max-width: 300px;
+        margin: 50px auto;
     }
 }
 
@@ -69,14 +73,15 @@ footer {
 
 @media only screen and (min-width: $med-break) {
     //logo svg inserted before .intro section
-.intro:before {
-    content: ' ';
-    grid-column: 3 / 5;
-    width: 450px;
-    height: 159px;
-    background: url(assets/logo.svg);
-    background-size: 450px 159px;
-}
+    .intro:before {
+        content: ' ';
+        grid-column: 2 / 4;
+        width: 450px;
+        height: 159px;
+        background: url(assets/logo.svg);
+        background-size: 450px 159px;
+    }
+
 
 //grid one for section .intro - header, summary and road to enlightenment
 section.intro {
@@ -84,7 +89,7 @@ section.intro {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(4, auto);
     header {
-        grid-column: 3 / 5;
+        grid-column: 2 / 4;
         grid-row: 2;
         background-color: #fff;
         padding: 0 1rem;
@@ -94,7 +99,7 @@ section.intro {
     }
     .summary {
         background-color: #fff;
-        grid-column: 3 / 5;
+        grid-column: 2 / 4;
         grid-row: 3 / 4;
         padding: 0 1rem;
         margin: 0;
@@ -158,3 +163,22 @@ section.intro {
         height: auto;
     }
 }
+
+@media only screen and (min-width: $lrg-break) {
+    //logo svg inserted before .intro section
+    .intro:before {
+        content: ' ';
+        grid-column: 3 / 5;
+    }
+
+    section.intro {
+        header {
+            grid-column: 3 / 5;
+        }
+
+        .summary {
+            grid-column: 3 / 5;
+            grid-row: 3 / 4;
+        }
+    }
+} 
