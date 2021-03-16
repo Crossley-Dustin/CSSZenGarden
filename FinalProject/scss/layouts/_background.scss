@@ -8,7 +8,7 @@ body {
 @media only screen and (min-width: $med-break) { 
 
   body {
-    background-image: url(assets/med-path-01.svg);
+    background-image: url(assets/med-sm-path-01.svg);
     background-position: center top;
     background-size: 700px;
   }
@@ -21,5 +21,16 @@ body {
     background-position: center top;
     background-size: 900px;
   }
+
+}
+
+  @media only screen and (min-width: $xlrg-break) {
+    body {
+      background-image: url(assets/path-01.svg);
+      background-position: center top;
+      background-size: 900px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
 }
