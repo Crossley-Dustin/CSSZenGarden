@@ -40,21 +40,15 @@
 
 @media only screen and (min-width: $med-break) {
     .wrapper {
-        grid-template-columns: 1fr 2fr 1fr;
-        grid-template-rows: repeat(3, auto);
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, auto);
         grid-template-areas: 
-        ". archives archives ." 
-        ". resources resources ." 
-        "designs designs designs designs";
-    }
-
-    .design-archives, .zen-resources {
-        position: relative;
-        left: -4.85rem;
+        ". archives archives resources resources ."
+        ". designs designs designs designs .";
     }
 }
 
-@media only screen and (min-width: $xlrg-break) {
+@media only screen and (min-width: $lrg-break) {
     .wrapper {
         grid-template-columns: 1fr 3fr 3fr 2fr;
         grid-template-rows: repeat(2, auto);
