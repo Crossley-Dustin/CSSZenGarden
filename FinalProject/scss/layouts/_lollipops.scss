@@ -1,3 +1,125 @@
+// lollipop settings
+$lollipop-distance-away: -14vw;
+$lollipop-height: 200px;
+$lollipop-width: 150px;
+$lolli-top-start: 80px;
+$lolli-stick-start: 196px;
+//
+$lolli-height-large: 300px;
+$lolli-width-large: 250px;
+$lolli-top-start-large: 80px;
+$lolli-stick-start-large: 274px;
+//
+$lolli-height-small: 200px;
+$lolli-width-small: 150px;
+$lolli-top-start-small: 80px;
+$lolli-stick-start-small: 196px;
+// make all article divs relative so we can position lollipops around them
+div[role=article]:not(.summary) {
+    position: relative;
+}
+
+// narrow view lollipops
+div[role=article]:not(.summary) {
+    &:before {
+        content: "";
+        position: absolute;
+        width: $lolli-width-large;
+        height: $lolli-height-large;
+        background: url(assets/stick.svg) no-repeat center;
+        top: $lolli-stick-start-large;
+        opacity: 25%;
+        left: 40px;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        width: $lolli-width-large;
+        height: $lolli-width-large;
+        background-repeat: no-repeat;
+        top: $lolli-top-start-large;
+        opacity: 25%;
+        left: 40px;
+    }
+    &:hover:after {
+        animation: spin-right 10s infinite linear; //alternate-reverse
+        animation-fill-mode: forwards;
+    }
+}
+
+// put lollies inside all odd articles
+div[role=article]:not(.summary):nth-of-type(odd) {
+    &:after {
+        background-image: url(assets/lollipop-04.svg);
+    }
+}
+
+// put lollies inside all even articles
+div[role=article]:not(.summary):nth-of-type(even) {
+    &:after {
+        background-image: url(assets/lollipop-01.svg);
+    }
+}
+
+@media only screen and (min-width: $med-break) {
+    div[role=article]:not(.summary) {
+        &:before,
+        &:after {
+            left: 20px;
+        }
+    }
+}
+
+@media only screen and (min-width: $lrg-break) {
+    // wide lolli settings
+    div[role=article]:not(.summary) {
+        &:before {
+            opacity: 100%;
+            //transform: scale(.75, .75);
+            height: $lolli-height-small;
+            width: $lolli-width-small;
+            top: $lolli-stick-start-small;
+            left: unset;
+        }
+        &:after {
+            opacity: 100%;
+            //transform: scale(.75, .75);
+            height: $lolli-width-small;
+            width: $lolli-width-small;
+            top: $lolli-top-start-small;
+            left: unset;
+        }
+        &:hover:after {
+            animation: spin-right 2s infinite linear; //alternate-reverse
+            animation-fill-mode: forwards;
+        }
+    }
+    // put lollies to the right of all odd articles
+    div[role=article]:not(.summary):nth-of-type(odd) {
+        &:before {
+            right: $lollipop-distance-away;
+        }
+        &:after {
+            right: $lollipop-distance-away;
+        }
+    }
+    // put lollies to the left of all even articles
+    div[role=article]:not(.summary):nth-of-type(even) {
+        &:before {
+            left: $lollipop-distance-away;
+        }
+        &:after {
+            left: $lollipop-distance-away;
+        }
+    }
+}
+
+@keyframes spin-right {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 // float the image inside the text
 
 /*
@@ -12,7 +134,9 @@
 }
 */
 
-// float the image between paragraphs
+
+/*
+// float the jellybean between paragraphs
 #zen-explanation p:nth-of-type(2)::before {
     content: "";
     width: 100%;
@@ -22,7 +146,10 @@
     background-repeat: no-repeat;
     background-position-x: center;
 }
+*/
 
+
+/*
 // float the lollipops inside the text
 div[role=article]:not(.summary) h3:before {
     //background: lime;
@@ -33,73 +160,4 @@ div[role=article]:not(.summary) h3:before {
     background-image: url(assets/lollipop.svg);
     background-repeat: no-repeat;
 }
-
-@media only screen and (min-width: $lrg-break) {
-    // pull out the inside floated lollipops
-    div[role=article]:not(.summary) h3:before {
-        //background: lime;
-        content: "";
-        width: 0; //75px;
-        height: 0; //105px;
-        float: right;
-        background-image: ""; //url(assets/lollipop.svg);
-        background-repeat: no-repeat;
-    }
-    // generic lollipop for all role=article elements, except the first summary div
-    div[role=article]:not(.summary) {
-        position: relative;
-        &:before {
-            content: "";
-            position: absolute;
-            width: 100px;
-            height: 200px;
-            background: url(assets/stick.svg) no-repeat center;
-        }
-        &:after {
-            content: "";
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-repeat: no-repeat;
-        }
-        &:hover:after {
-            animation: spin-right 5s infinite linear; //alternate-reverse
-            animation-fill-mode: forwards;
-        }
-    }
-    // put lollies to the right of all odd articles
-    div[role=article]:not(.summary):nth-of-type(odd) {
-        &:before {
-            right: -12vw;
-            //right: -120px;
-            top: 50px;
-        }
-        &:after {
-            background-image: url(assets/lollipop-04.svg);
-            right: -12vw;
-            //right: -120px;
-            top: 40px;
-        }
-    }
-    // put lollies to the left of all even articles
-    div[role=article]:not(.summary):nth-of-type(even) {
-        &:before {
-            left: -12vw;
-            //left: -120px;
-            top: 50px;
-        }
-        &:after {
-            background-image: url(assets/lollipop-01.svg);
-            left: -12vw;
-            //transform: scale(1.5, 1.5);
-            //left: -120px;
-            top: 40px;
-        }
-    }
-}
-
-@keyframes spin-right {
-    100% {
-        transform: rotate(360deg);
-    }
-}
+*/
