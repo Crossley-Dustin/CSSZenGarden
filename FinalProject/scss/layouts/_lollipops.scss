@@ -1,4 +1,6 @@
 // float the image inside the text
+
+/*
 #zen-explanation h3:before {
     //background: lime;
     content: "";
@@ -8,6 +10,7 @@
     background-image: url(assets/lollipop.svg);
     background-repeat: no-repeat;
 }
+*/
 
 // float the image between paragraphs
 #zen-explanation p:nth-of-type(2)::before {
@@ -20,57 +23,78 @@
     background-position-x: center;
 }
 
-// generic for all role=article elements, except the first summary div
-div[role=article]:not(.summary) {
-    position: relative;
-    &:before {
+// float the lollipops inside the text
+div[role=article]:not(.summary) h3:before {
+    //background: lime;
+    content: "";
+    width: 75px;
+    height: 105px;
+    float: right;
+    background-image: url(assets/lollipop.svg);
+    background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: $lrg-break) {
+    // pull out the inside floated lollipops
+    div[role=article]:not(.summary) h3:before {
+        //background: lime;
         content: "";
-        position: absolute;
-        width: 100px;
-        height: 200px;
-        background: url(assets/stick.svg) no-repeat center;
-    }
-    &:after {
-        content: "";
-        position: absolute;
-        width: 100px;
-        height: 100px;
+        width: 0; //75px;
+        height: 0; //105px;
+        float: right;
+        background-image: ""; //url(assets/lollipop.svg);
         background-repeat: no-repeat;
     }
-    &:hover:after {
-        animation: spin-right 5s infinite linear; //alternate-reverse
-        animation-fill-mode: forwards;
+    // generic lollipop for all role=article elements, except the first summary div
+    div[role=article]:not(.summary) {
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 200px;
+            background: url(assets/stick.svg) no-repeat center;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-repeat: no-repeat;
+        }
+        &:hover:after {
+            animation: spin-right 5s infinite linear; //alternate-reverse
+            animation-fill-mode: forwards;
+        }
     }
-}
-
-// put lollies to the right of all odd articles
-div[role=article]:not(.summary):nth-of-type(odd) {
-    &:before {
-        right: -12vw;
-        //right: -120px;
-        top: 50px;
+    // put lollies to the right of all odd articles
+    div[role=article]:not(.summary):nth-of-type(odd) {
+        &:before {
+            right: -12vw;
+            //right: -120px;
+            top: 50px;
+        }
+        &:after {
+            background-image: url(assets/lollipop-04.svg);
+            right: -12vw;
+            //right: -120px;
+            top: 40px;
+        }
     }
-    &:after {
-        background-image: url(assets/lollipop-04.svg);
-        right: -12vw;
-        //right: -120px;
-        top: 40px;
-    }
-}
-
-// put lollies to the left of all even articles
-div[role=article]:not(.summary):nth-of-type(even) {
-    &:before {
-        left: -12vw;
-        //left: -120px;
-        top: 50px;
-    }
-    &:after {
-        background-image: url(assets/lollipop-01.svg);
-        left: -12vw;
-        //transform: scale(1.5, 1.5);
-        //left: -120px;
-        top: 40px;
+    // put lollies to the left of all even articles
+    div[role=article]:not(.summary):nth-of-type(even) {
+        &:before {
+            left: -12vw;
+            //left: -120px;
+            top: 50px;
+        }
+        &:after {
+            background-image: url(assets/lollipop-01.svg);
+            left: -12vw;
+            //transform: scale(1.5, 1.5);
+            //left: -120px;
+            top: 40px;
+        }
     }
 }
 
