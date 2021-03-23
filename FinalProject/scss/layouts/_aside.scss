@@ -19,6 +19,7 @@
     grid-area: designs;
 }
 
+
 .design-archives, .zen-resources, .design-selection {
     background-color: #fff;
     padding: 0;
@@ -27,6 +28,60 @@
     height: auto;
     border-radius: .5rem;
 }
+
+#design-archives {
+    content: ' ';
+    background: url(assets/sign-01.svg) no-repeat top left;
+    height: 270px;
+    grid-row: 1;
+    background-repeat: no-repeat;
+    position: relative;
+    h3 {
+        display: none;
+    }
+    ul{
+        text-align: center;
+        //border: 2px solid black;
+        padding: 4rem 0 0 5.5rem;
+        position: absolute;
+        li {
+            list-style-type: none;
+            font-size: .8rem;
+            font-weight: 800;    
+            a {
+                color: #fff;      
+            }
+        }
+    }
+}
+
+#zen-resources {
+    content: ' ';
+    background: url(assets/sign-01.svg) no-repeat top left;
+    height: 340px;
+    grid-row: 2;
+    background-repeat: no-repeat;
+    position: relative;
+    h3 {
+        display: none;
+    }
+    ul{
+        text-align: center;
+        //border: 2px solid black;
+        padding: 4.25rem 0 0 6rem;
+        position: absolute;
+        li {
+            list-style-type: none;
+            font-size: .8rem;
+            font-weight: 800;    
+            a {
+                color: #fff;      
+            }
+        }
+    }
+}
+
+
 
 .explanation, .participation, .benefits, .requirements {
     max-width: 300px;
@@ -46,14 +101,42 @@
         ". archives archives resources resources ."
         ". designs designs designs designs .";
     }
+
+    #design-archives {
+        grid-row: 1;
+        grid-column: 1/4;
+    }
+    
+    #zen-resources {
+        grid-row: 1;
+        grid-column: 4/7;
+        h3 {
+            display: none;
+        }
+    }
+
 }
 
 @media only screen and (min-width: $lrg-break) {
     .wrapper {
-        grid-template-columns: 1fr 3fr 3fr 2fr;
+        grid-template-columns: 1fr 3fr 3fr 1fr;
         grid-template-rows: repeat(2, auto);
         grid-template-areas: ". archives resources ." "designs designs designs designs";
     }
+
+    #design-archives {
+        grid-row: 1;
+        grid-column: 2/3;
+    }
+    
+    #zen-resources {
+        grid-row: 1;
+        grid-column: 3/4;
+        h3 {
+            display: none;
+        }
+    }
+
 }
 
 @media only screen and (min-width: $xlrg-break) {
