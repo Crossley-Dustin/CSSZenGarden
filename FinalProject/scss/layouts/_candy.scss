@@ -16,13 +16,9 @@
 .design-selection nav ul li {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1fr 5fr 1fr;
-    grid-template-areas: "design-name" "candy" "designer-name";
+    grid-template-rows: 7fr 1fr;
+    grid-template-areas: "design-name" "designer-name";
     text-align: left;
-    background-repeat: no-repeat;
-    background-size: 9rem;
-    background-position-y: center;
-    background-position-x: left;
     min-width: 14rem;
     opacity: .95;
     transition: background-image .4s ease-in;
@@ -37,6 +33,11 @@
     text-transform: uppercase;
     letter-spacing: .1rem;
     color: $color-5;
+    background-repeat: no-repeat;
+    background-size: 8rem;
+    background-position-y: bottom;
+    background-position-x: left;
+    //outline: purple solid 1px;
 }
 
 .designer-name {
@@ -47,31 +48,116 @@
 
 .designer-name:before {
     content: "by ";
-    font-size: .8rem;
+    font-size: .7rem;
     color: darken($color-4, 15%);
 }
 
-// loop for candy backgrounds
-@for $index from 1 to 9 {
-    .design-selection li:nth-of-type(#{$index}) {
-        background-image: url(assets/candies-0#{$index}.svg);
-        //grid-area: candy;
+a[href="/221/"] {
+    background-image: url(assets/candies-01.svg);
+    &:hover {
+        background-image: url(assets/peppermint-01.svg);
     }
 }
 
+a[href="/220/"] {
+    background-image: url(assets/candies-02.svg);
+    &:hover {
+        background-image: url(assets/peppermint-02.svg);
+    }
+}
+
+a[href="/219/"] {
+    background-image: url(assets/candies-07.svg);
+    &:hover {
+        background-image: url(assets/peppermint-07.svg);
+    }
+}
+
+a[href="/218/"] {
+    background-image: url(assets/candies-04.svg);
+    &:hover {
+        background-image: url(assets/peppermint-04.svg);
+    }
+}
+
+a[href="/217/"] {
+    background-image: url(assets/candies-05.svg);
+    &:hover {
+        background-image: url(assets/peppermint-05.svg);
+    }
+}
+
+a[href="/216/"] {
+    background-image: url(assets/candies-06.svg);
+    &:hover {
+        background-image: url(assets/peppermint-06.svg);
+    }
+}
+
+a[href="/215/"] {
+    background-image: url(assets/candies-08.svg);
+    &:hover {
+        background-image: url(assets/peppermint-08.svg);
+    }
+}
+
+a[href="/214/"] {
+    background-image: url(assets/candies-03.svg);
+    &:hover {
+        background-image: url(assets/peppermint-03.svg);
+    }
+}
+
+// testing background loop area
+// $first-width: 5px;
+// $second-width: 5px;
+// @function adjust_width($n) {
+//     @return $n * $first-width+($n - 1) * $second-width;
+// }
+// .set_width {
+//     padding-left: adjust_width(10);
+// }
+// @function candy_number($h) {
+//     $var3: 222 + $h;
+//     @return $var3;
+// }
+// @function candy_name($hr) {
+//     $candy_number: candy_number($hr);
+//     $candy_file: "assets/candies-0";
+//     $candy_ext: ".svg";
+//     $result: $candy_file + $candy_number + $candy_ext;
+//     @return $result;
+// }
+// a[href="/220/"] {
+//     outline: red 1px solid;
+// }
+// @for $index from 214 to 222 {
+//     a[href="/#{$index}/"] {
+//         background-image: url(#{candy_name(#{$index})
+//     }
+//     );
+// }
+// }
+// end testing background loop area
+// loop for candy backgrounds
+// @for $index from 1 to 9 {
+//     .design-selection .design-name:nth-of-type(#{$index}) {
+//         background-image: url(assets/candies-0#{$index}.svg);
+//         //grid-area: candy;
+//     }
+// }
 // Set basic candy hover properties
-.design-selection li:hover {
+.design-name:hover {
     opacity: 1;
     animation: candy-wiggle .4s ease-in;
 }
 
 // loop for candy hovers
-@for $index from 1 to 9 {
-    .design-selection li:nth-of-type(#{$index}):hover {
-        background-image: url(assets/peppermint-0#{$index}.svg);
-    }
-}
-
+// @for $index from 1 to 9 {
+//     .design-selection .design-name:nth-of-type(#{$index}):hover {
+//         background-image: url(assets/peppermint-0#{$index}.svg);
+//     }
+// }
 // Make the image move R-L-R and back to center
 @keyframes candy-wiggle {
     0% {
@@ -120,6 +206,9 @@
         margin-top: 0;
     }
     .design-selection nav ul li {
+        grid-template-rows: 6fr 1fr;
+    }
+    .design-name {
         min-width: 17rem;
         text-align: center;
         background-position-x: center;
@@ -130,6 +219,7 @@
     .designer-name,
     .designer-name:before {
         font-size: 1rem;
+        text-align: center;
     }
 }
 
@@ -137,10 +227,10 @@
     .design-selection nav[role=navigation] ul {
         column-gap: .5rem;
     }
-    .design-selection nav ul li {
+    .design-name {
         min-width: 15rem;
     }
-    .design-selection nav ul li {
+    .design-name {
         min-width: 17rem;
     }
     .design-name {
@@ -162,7 +252,7 @@
         column-gap: 0rem;
         padding: .25rem;
     }
-    .design-selection nav ul li {
+    .design-name {
         min-width: 19rem;
     }
 }
