@@ -16,13 +16,9 @@
 .design-selection nav ul li {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1fr 5fr 1fr;
-    grid-template-areas: "design-name" "candy" "designer-name";
+    grid-template-rows: 7fr 1fr;
+    grid-template-areas: "design-name" "designer-name";
     text-align: left;
-    background-repeat: no-repeat;
-    background-size: 9rem;
-    background-position-y: center;
-    background-position-x: left;
     min-width: 14rem;
     opacity: .95;
     transition: background-image .4s ease-in;
@@ -37,62 +33,82 @@
     text-transform: uppercase;
     letter-spacing: .1rem;
     color: $color-5;
+    background-repeat: no-repeat;
+    background-size: 8rem;
+    background-position-y: bottom;
+    background-position-x: left;
+    //outline: purple solid 1px;
 }
 
 .designer-name {
     grid-area: designer-name;
     font-size: .8rem;
     color: darken($color-4, 15%);
+    &:hover {
+        font-weight: 600;
+        text-decoration: underline;
+    }
 }
 
 .designer-name:before {
     content: "by ";
-    font-size: .8rem;
+    font-size: .7rem;
     color: darken($color-4, 15%);
 }
 
-// loop for candy backgrounds
-@for $index from 1 to 9 {
-    .design-selection li:nth-of-type(#{$index}) {
-        background-image: url(assets/candies-0#{$index}.svg);
-        //grid-area: candy;
+// Make a list of design links and associate them with a candy number
+$candy_pairs: 221 1,
+220 2,
+219 7,
+218 4,
+217 5,
+216 6,
+215 8,
+214 3;
+// Create the link backgrounds and hover backgrounds using $candy_pairs list
+@each $candy_pair in $candy_pairs {
+    a[href="/#{nth($candy-pair,1)}/"] {
+        background-image: url('assets/candies-0#{nth($candy_pair,2)}.svg');
+        &:hover {
+            background-image: url('assets/peppermint-0#{nth($candy-pair,2)}.svg');
+            font-weight: 600;
+            text-decoration: underline;
+        }
     }
 }
 
 // Set basic candy hover properties
-.design-selection li:hover {
+.design-name:hover {
     opacity: 1;
     animation: candy-wiggle .4s ease-in;
-}
-
-// loop for candy hovers
-@for $index from 1 to 9 {
-    .design-selection li:nth-of-type(#{$index}):hover {
-        background-image: url(assets/peppermint-0#{$index}.svg);
-    }
 }
 
 // Make the image move R-L-R and back to center
 @keyframes candy-wiggle {
     0% {
         background-position: center;
+        //transform: translateX(0);
         background-size: 9rem; //40%;
         /*80%*/
     }
     25% {
         background-position: left;
+        //transform: translateX(-50px);
         background-size: 12rem; //70%;
     }
     50% {
         background-position: right;
+        //transform: translateX(50px);
         background-size: 15rem; //40%;
     }
     75% {
         background-position: left;
+        //transform: translateX(-50);
         background-size: 12rem; //70%;
     }
     100% {
         background-position: center;
+        //transform: translateX(0);
         background-size: 9rem; //100%;
     }
 }
@@ -120,6 +136,9 @@
         margin-top: 0;
     }
     .design-selection nav ul li {
+        grid-template-rows: 6fr 1fr;
+    }
+    .design-name {
         min-width: 17rem;
         text-align: center;
         background-position-x: center;
@@ -130,6 +149,7 @@
     .designer-name,
     .designer-name:before {
         font-size: 1rem;
+        text-align: center;
     }
 }
 
@@ -137,10 +157,10 @@
     .design-selection nav[role=navigation] ul {
         column-gap: .5rem;
     }
-    .design-selection nav ul li {
+    .design-name {
         min-width: 15rem;
     }
-    .design-selection nav ul li {
+    .design-name {
         min-width: 17rem;
     }
     .design-name {
@@ -162,7 +182,7 @@
         column-gap: 0rem;
         padding: .25rem;
     }
-    .design-selection nav ul li {
+    .design-name {
         min-width: 19rem;
     }
 }

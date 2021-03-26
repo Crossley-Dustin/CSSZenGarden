@@ -1,9 +1,5 @@
 // lollipop settings
 $lollipop-distance-away: -14vw;
-$lollipop-height: 200px;
-$lollipop-width: 150px;
-$lolli-top-start: 80px;
-$lolli-stick-start: 196px;
 //
 $lolli-height-large: 300px;
 $lolli-width-large: 250px;
@@ -61,6 +57,17 @@ div[role=article]:not(.summary):nth-of-type(even) {
     }
 }
 
+// special case - benefits article
+#zen-benefits {
+    &:before {
+        background-image: none;
+    }
+    &:after {
+        background-image: url(assets/lollipop-03.svg);
+        top: 30px;
+    }
+}
+
 @media only screen and (min-width: $med-break) {
     div[role=article]:not(.summary) {
         &:before,
@@ -72,6 +79,11 @@ div[role=article]:not(.summary):nth-of-type(even) {
 
 @media only screen and (min-width: $lrg-break) {
     // wide lolli settings
+    // special case - benefits article
+    #zen-benefits:before {
+        background-image: url(assets/stick.svg);
+        top: 146px;
+    }
     div[role=article]:not(.summary) {
         &:before {
             opacity: 100%;
