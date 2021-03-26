@@ -42,12 +42,13 @@
     ul{
         text-align: center;
         //border: 2px solid black;
-        padding: 4rem 0 0 5.5rem;
+        padding: 3.5rem 0 0 6rem;
         position: absolute;
         li {
             list-style-type: none;
-            font-size: .8rem;
-            font-weight: 800;    
+            font-size: 1.2rem;
+            font-family: $sign-font;
+            letter-spacing: .05rem;    
             a {
                 color: #fff;      
             }
@@ -68,12 +69,14 @@
     ul{
         text-align: center;
         //border: 2px solid black;
-        padding: 4.25rem 0 0 6rem;
+        padding: 4.25rem 0 0 7rem;
         position: absolute;
         li {
             list-style-type: none;
-            font-size: .8rem;
-            font-weight: 800;    
+            font-size: 1rem;
+            font-family: $sign-font;
+            letter-spacing: .05rem;
+            line-height: 1.15rem;    
             a {
                 color: #fff;      
             }
@@ -81,6 +84,9 @@
     }
 }
 
+#design-selection h3 {
+    padding-left: 1rem;
+}
 
 
 .explanation, .participation, .benefits, .requirements {
