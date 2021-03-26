@@ -44,6 +44,10 @@
     grid-area: designer-name;
     font-size: .8rem;
     color: darken($color-4, 15%);
+    &:hover {
+        font-weight: 600;
+        text-decoration: underline;
+    }
 }
 
 .designer-name:before {
@@ -52,133 +56,59 @@
     color: darken($color-4, 15%);
 }
 
-a[href="/221/"] {
-    background-image: url(assets/candies-01.svg);
-    &:hover {
-        background-image: url(assets/peppermint-01.svg);
+// Make a list of design links and associate them with a candy number
+$candy_pairs: 221 1,
+220 2,
+219 7,
+218 4,
+217 5,
+216 6,
+215 8,
+214 3;
+// Create the link backgrounds and hover backgrounds using $candy_pairs list
+@each $candy_pair in $candy_pairs {
+    a[href="/#{nth($candy-pair,1)}/"] {
+        background-image: url('assets/candies-0#{nth($candy_pair,2)}.svg');
+        &:hover {
+            background-image: url('assets/peppermint-0#{nth($candy-pair,2)}.svg');
+            font-weight: 600;
+            text-decoration: underline;
+        }
     }
 }
 
-a[href="/220/"] {
-    background-image: url(assets/candies-02.svg);
-    &:hover {
-        background-image: url(assets/peppermint-02.svg);
-    }
-}
-
-a[href="/219/"] {
-    background-image: url(assets/candies-07.svg);
-    &:hover {
-        background-image: url(assets/peppermint-07.svg);
-    }
-}
-
-a[href="/218/"] {
-    background-image: url(assets/candies-04.svg);
-    &:hover {
-        background-image: url(assets/peppermint-04.svg);
-    }
-}
-
-a[href="/217/"] {
-    background-image: url(assets/candies-05.svg);
-    &:hover {
-        background-image: url(assets/peppermint-05.svg);
-    }
-}
-
-a[href="/216/"] {
-    background-image: url(assets/candies-06.svg);
-    &:hover {
-        background-image: url(assets/peppermint-06.svg);
-    }
-}
-
-a[href="/215/"] {
-    background-image: url(assets/candies-08.svg);
-    &:hover {
-        background-image: url(assets/peppermint-08.svg);
-    }
-}
-
-a[href="/214/"] {
-    background-image: url(assets/candies-03.svg);
-    &:hover {
-        background-image: url(assets/peppermint-03.svg);
-    }
-}
-
-// testing background loop area
-// $first-width: 5px;
-// $second-width: 5px;
-// @function adjust_width($n) {
-//     @return $n * $first-width+($n - 1) * $second-width;
-// }
-// .set_width {
-//     padding-left: adjust_width(10);
-// }
-// @function candy_number($h) {
-//     $var3: 222 + $h;
-//     @return $var3;
-// }
-// @function candy_name($hr) {
-//     $candy_number: candy_number($hr);
-//     $candy_file: "assets/candies-0";
-//     $candy_ext: ".svg";
-//     $result: $candy_file + $candy_number + $candy_ext;
-//     @return $result;
-// }
-// a[href="/220/"] {
-//     outline: red 1px solid;
-// }
-// @for $index from 214 to 222 {
-//     a[href="/#{$index}/"] {
-//         background-image: url(#{candy_name(#{$index})
-//     }
-//     );
-// }
-// }
-// end testing background loop area
-// loop for candy backgrounds
-// @for $index from 1 to 9 {
-//     .design-selection .design-name:nth-of-type(#{$index}) {
-//         background-image: url(assets/candies-0#{$index}.svg);
-//         //grid-area: candy;
-//     }
-// }
 // Set basic candy hover properties
 .design-name:hover {
     opacity: 1;
     animation: candy-wiggle .4s ease-in;
 }
 
-// loop for candy hovers
-// @for $index from 1 to 9 {
-//     .design-selection .design-name:nth-of-type(#{$index}):hover {
-//         background-image: url(assets/peppermint-0#{$index}.svg);
-//     }
-// }
 // Make the image move R-L-R and back to center
 @keyframes candy-wiggle {
     0% {
         background-position: center;
+        //transform: translateX(0);
         background-size: 9rem; //40%;
         /*80%*/
     }
     25% {
         background-position: left;
+        //transform: translateX(-50px);
         background-size: 12rem; //70%;
     }
     50% {
         background-position: right;
+        //transform: translateX(50px);
         background-size: 15rem; //40%;
     }
     75% {
         background-position: left;
+        //transform: translateX(-50);
         background-size: 12rem; //70%;
     }
     100% {
         background-position: center;
+        //transform: translateX(0);
         background-size: 9rem; //100%;
     }
 }
