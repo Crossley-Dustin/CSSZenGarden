@@ -19,6 +19,9 @@
     grid-area: designs;
 }
 
+abbr {
+    text-decoration: none;
+}
 
 .design-archives, .zen-resources, .design-selection {
     background-color: #fff;
@@ -40,15 +43,15 @@
         display: none;
     }
     ul{
-        text-align: center;
+        text-align: left;
         //border: 2px solid black;
-        padding: 3.5rem 0 0 6rem;
+        padding: 3.7rem 0 0 4.5rem;
         position: absolute;
         li {
             list-style-type: none;
-            font-size: 1.2rem;
-            font-family: $sign-font;
-            letter-spacing: .05rem;    
+            font-size: .8rem;
+            font-weight: 900;
+            line-height: 1.5rem;
             a {
                 color: #fff;      
             }
@@ -58,8 +61,8 @@
 
 #zen-resources {
     content: ' ';
-    background: url(assets/sign-01.svg) no-repeat top left;
-    height: 340px;
+    background: url(assets/sign2-01.svg) no-repeat top left;
+    height: 260px;
     grid-row: 2;
     background-repeat: no-repeat;
     position: relative;
@@ -67,25 +70,31 @@
         display: none;
     }
     ul{
-        text-align: center;
+        text-align: left;
         //border: 2px solid black;
-        padding: 4.25rem 0 0 7rem;
+        padding: 3.8rem 0 0 3.3rem;
         position: absolute;
         li {
             list-style-type: none;
-            font-size: 1rem;
-            font-family: $sign-font;
-            letter-spacing: .05rem;
-            line-height: 1.15rem;    
+            font-size: .8rem;
+            font-weight: 900;
+            line-height: 1.5rem;    
             a {
-                color: #fff;      
+                color: #fff;   
+ 
             }
         }
     }
 }
 
+.next, .viewall, .view-css, .css-resources, .zen-faq, .zen-submit, .zen-translations {
+    a::before {
+        content: "» ";
+    }  
+}
+
 #design-selection h3 {
-    padding-left: 1rem;
+    padding-left: 2rem;
 }
 
 
@@ -105,7 +114,7 @@
         grid-template-rows: repeat(2, auto);
         grid-template-areas: 
         ". archives archives resources resources ."
-        ". designs designs designs designs .";
+        " designs designs designs designs designs designs";
     }
 
     #design-archives {
