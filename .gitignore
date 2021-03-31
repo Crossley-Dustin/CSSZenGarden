@@ -7,3 +7,5 @@ node_modules
 .cache
 build
 .DS_Store
+FinalProject/.stylelintrc.json
+FinalProject/csslintoutput.txt

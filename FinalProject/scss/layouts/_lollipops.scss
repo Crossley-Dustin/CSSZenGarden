@@ -17,7 +17,7 @@ div[role=article]:not(.summary) {
 
 // narrow view lollipops
 div[role=article]:not(.summary) {
-    &:before {
+    &::before {
         content: "";
         position: absolute;
         width: $lolli-width-large;
@@ -27,7 +27,7 @@ div[role=article]:not(.summary) {
         opacity: 25%;
         left: 40px;
     }
-    &:after {
+    &::after {
         content: "";
         position: absolute;
         width: $lolli-width-large;
@@ -37,7 +37,7 @@ div[role=article]:not(.summary) {
         opacity: 25%;
         left: 40px;
     }
-    &:hover:after {
+    &:hover::after {
         animation: spin-right 10s infinite linear; //alternate-reverse
         animation-fill-mode: forwards;
     }
@@ -45,24 +45,24 @@ div[role=article]:not(.summary) {
 
 // put lollies inside all odd articles
 div[role=article]:not(.summary):nth-of-type(odd) {
-    &:after {
+    &::after {
         background-image: url(assets/lollipop-04.svg);
     }
 }
 
 // put lollies inside all even articles
 div[role=article]:not(.summary):nth-of-type(even) {
-    &:after {
+    &::after {
         background-image: url(assets/lollipop-01.svg);
     }
 }
 
 // special case - benefits article
 #zen-benefits {
-    &:before {
+    &::before {
         background-image: none;
     }
-    &:after {
+    &::after {
         background-image: url(assets/lollipop-03.svg);
         top: 30px;
     }
@@ -70,8 +70,10 @@ div[role=article]:not(.summary):nth-of-type(even) {
 
 @media only screen and (min-width: $med-break) {
     div[role=article]:not(.summary) {
-        &:before,
-        &:after {
+        &::before {
+            left: 20px;
+        }
+        &::after {
             left: 20px;
         }
     }
@@ -80,12 +82,12 @@ div[role=article]:not(.summary):nth-of-type(even) {
 @media only screen and (min-width: $lrg-break) {
     // wide lolli settings
     // special case - benefits article
-    #zen-benefits:before {
+    #zen-benefits::before {
         background-image: url(assets/stick.svg);
         top: 146px;
     }
     div[role=article]:not(.summary) {
-        &:before {
+        &::before {
             opacity: 100%;
             //transform: scale(.75, .75);
             height: $lolli-height-small;
@@ -93,7 +95,7 @@ div[role=article]:not(.summary):nth-of-type(even) {
             top: $lolli-stick-start-small;
             left: unset;
         }
-        &:after {
+        &::after {
             opacity: 100%;
             //transform: scale(.75, .75);
             height: $lolli-width-small;
@@ -101,26 +103,26 @@ div[role=article]:not(.summary):nth-of-type(even) {
             top: $lolli-top-start-small;
             left: unset;
         }
-        &:hover:after {
+        &:hover::after {
             animation: spin-right 2s infinite linear; //alternate-reverse
             animation-fill-mode: forwards;
         }
     }
     // put lollies to the right of all odd articles
     div[role=article]:not(.summary):nth-of-type(odd) {
-        &:before {
+        &::before {
             right: $lollipop-distance-away;
         }
-        &:after {
+        &::after {
             right: $lollipop-distance-away;
         }
     }
     // put lollies to the left of all even articles
     div[role=article]:not(.summary):nth-of-type(even) {
-        &:before {
+        &::before {
             left: $lollipop-distance-away;
         }
-        &:after {
+        &::after {
             left: $lollipop-distance-away;
         }
     }
@@ -131,45 +133,3 @@ div[role=article]:not(.summary):nth-of-type(even) {
         transform: rotate(360deg);
     }
 }
-
-// float the image inside the text
-
-/*
-#zen-explanation h3:before {
-    //background: lime;
-    content: "";
-    width: 75px;
-    height: 105px;
-    float: right;
-    background-image: url(assets/lollipop.svg);
-    background-repeat: no-repeat;
-}
-*/
-
-
-/*
-// float the jellybean between paragraphs
-#zen-explanation p:nth-of-type(2)::before {
-    content: "";
-    width: 100%;
-    height: 80px;
-    float: left;
-    background-image: url(assets/jellybeans-01.svg);
-    background-repeat: no-repeat;
-    background-position-x: center;
-}
-*/
-
-
-/*
-// float the lollipops inside the text
-div[role=article]:not(.summary) h3:before {
-    //background: lime;
-    content: "";
-    width: 75px;
-    height: 105px;
-    float: right;
-    background-image: url(assets/lollipop.svg);
-    background-repeat: no-repeat;
-}
-*/

@@ -9,10 +9,6 @@
     // padding: 1rem;
 }
 
-.design-selection {
-    text-align: left;
-}
-
 .design-selection nav ul li {
     display: grid;
     grid-template-columns: 100%;
@@ -22,7 +18,7 @@
     min-width: 14rem;
     opacity: .95;
     transition: background-image .4s ease-in;
-    font-size: .0rem;
+    font-size: 0;
     //outline: green solid 1px;
     margin-top: 1.25rem;
 }
@@ -50,7 +46,7 @@
     }
 }
 
-.designer-name:before {
+.designer-name::before {
     content: "by ";
     font-size: .7rem;
     color: darken($color-4, 15%);
@@ -89,7 +85,6 @@ $candy_pairs: 221 1,
         background-position: center;
         //transform: translateX(0);
         background-size: 9rem; //40%;
-        /*80%*/
     }
     25% {
         background-position: left;
@@ -142,12 +137,10 @@ $candy_pairs: 221 1,
         min-width: 17rem;
         text-align: center;
         background-position-x: center;
-    }
-    .design-name {
         font-size: 1.2rem;
     }
     .designer-name,
-    .designer-name:before {
+    .designer-name::before {
         font-size: 1rem;
         text-align: center;
     }
@@ -158,16 +151,11 @@ $candy_pairs: 221 1,
         column-gap: .5rem;
     }
     .design-name {
-        min-width: 15rem;
-    }
-    .design-name {
         min-width: 17rem;
-    }
-    .design-name {
         font-size: 1.25rem;
     }
     .designer-name,
-    .designer-name:before {
+    .designer-name::before {
         font-size: 1rem;
     }
 }
@@ -179,7 +167,7 @@ $candy_pairs: 221 1,
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr 1fr;
         list-style: none;
-        column-gap: 0rem;
+        column-gap: 0;
         padding: .25rem;
     }
     .design-name {

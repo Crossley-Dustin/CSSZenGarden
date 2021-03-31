@@ -17,13 +17,16 @@
 
 .design-selection {
     grid-area: designs;
+    text-align: left;
 }
 
 abbr {
     text-decoration: none;
 }
 
-.design-archives, .zen-resources, .design-selection {
+.design-archives,
+.zen-resources,
+.design-selection {
     background-color: #fff;
     padding: 0;
     margin-top: -1rem;
@@ -42,7 +45,7 @@ abbr {
     h3 {
         display: none;
     }
-    ul{
+    ul {
         text-align: left;
         //border: 2px solid black;
         padding: 3.7rem 0 0 4.5rem;
@@ -53,7 +56,7 @@ abbr {
             font-weight: 900;
             line-height: 1.5rem;
             a {
-                color: #fff;      
+                color: #fff;
             }
         }
     }
@@ -69,7 +72,7 @@ abbr {
     h3 {
         display: none;
     }
-    ul{
+    ul {
         text-align: left;
         //border: 2px solid black;
         padding: 3.8rem 0 0 3.3rem;
@@ -78,30 +81,36 @@ abbr {
             list-style-type: none;
             font-size: .8rem;
             font-weight: 900;
-            line-height: 1.5rem;    
+            line-height: 1.5rem;
             a {
-                color: #fff;   
- 
+                color: #fff;
             }
         }
     }
 }
 
-.next, .viewall, .view-css, .css-resources, .zen-faq, .zen-submit, .zen-translations {
+.next,
+.viewall,
+.view-css,
+.css-resources,
+.zen-faq,
+.zen-submit,
+.zen-translations {
     a::before {
         content: "» ";
-    }  
+    }
 }
 
 #design-selection h3 {
     padding-left: 2rem;
 }
 
-
-.explanation, .participation, .benefits, .requirements {
+.explanation,
+.participation,
+.benefits,
+.requirements {
     max-width: 300px;
     margin: 50px auto;
-
 }
 
 .requirements {
@@ -112,16 +121,12 @@ abbr {
     .wrapper {
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(2, auto);
-        grid-template-areas: 
-        ". archives archives resources resources ."
-        " designs designs designs designs designs designs";
+        grid-template-areas: ". archives archives resources resources ." " designs designs designs designs designs designs";
     }
-
     #design-archives {
         grid-row: 1;
         grid-column: 1/4;
     }
-    
     #zen-resources {
         grid-row: 1;
         grid-column: 4/7;
@@ -129,7 +134,6 @@ abbr {
             display: none;
         }
     }
-
 }
 
 @media only screen and (min-width: $lrg-break) {
@@ -138,12 +142,10 @@ abbr {
         grid-template-rows: repeat(2, auto);
         grid-template-areas: ". archives resources ." "designs designs designs designs";
     }
-
     #design-archives {
         grid-row: 1;
         grid-column: 2/3;
     }
-    
     #zen-resources {
         grid-row: 1;
         grid-column: 3/4;
@@ -151,7 +153,6 @@ abbr {
             display: none;
         }
     }
-
 }
 
 @media only screen and (min-width: $xlrg-break) {

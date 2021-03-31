@@ -2,23 +2,22 @@
 //coming soon. it's going to be amyazing
 //}
 footer {
-   // position: relative;
+    // position: relative;
     //top: 0;
     //left: 0;
     //bottom: 0;
-   //@at-root right: 0;
-   // padding: 0;
-   margin-top: -40rem;
+    //@at-root right: 0;
+    // padding: 0;
     a:nth-child(1)::after {
         content: ' | '
     }
     a:nth-child(2)::after {
         content: ' | '
     }
-    a:nth-child(3):after {
+    a:nth-child(3)::after {
         content: '  |  '
     }
-    a:nth-child(4):after {
+    a:nth-child(4)::after {
         content: '  |  '
     }
 }
