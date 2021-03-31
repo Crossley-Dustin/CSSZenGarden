@@ -9,7 +9,7 @@
     // padding: 1rem;
 }
 
-.design-selection nav ul li {
+.design-selection li {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 7fr 1fr;
@@ -130,7 +130,7 @@ $candy_pairs: 221 1,
     #design-selection ul {
         margin-top: 0;
     }
-    .design-selection nav ul li {
+    .design-selection li {
         grid-template-rows: 6fr 1fr;
     }
     .design-name {
