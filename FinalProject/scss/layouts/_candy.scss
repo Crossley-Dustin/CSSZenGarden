@@ -36,19 +36,22 @@
     //outline: purple solid 1px;
 }
 
-.designer-name {
+a.designer-name {
     grid-area: designer-name;
     font-size: .8rem;
     color: darken($color-4, 15%);
+    &:link {
+        color: darken($color-4, 15%);
+        }
     &:hover {
         font-weight: 600;
-        text-decoration: underline;
-    }
+        color: $color-7;
+        }
 }
 
-.designer-name::before {
+a.designer-name::before {
     content: "by ";
-    font-size: .7rem;
+    font-size: .8rem;
     color: darken($color-4, 15%);
 }
 
@@ -65,10 +68,11 @@ $candy_pairs: 221 1,
 @each $candy_pair in $candy_pairs {
     a[href="/#{nth($candy-pair,1)}/"] {
         background-image: url('assets/candies-0#{nth($candy_pair,2)}.svg');
+        color: $color-5;
         &:hover {
             background-image: url('assets/peppermint-0#{nth($candy-pair,2)}.svg');
             font-weight: 600;
-            text-decoration: underline;
+            color: $color-7;
         }
     }
 }
@@ -133,14 +137,14 @@ $candy_pairs: 221 1,
     .design-selection li {
         grid-template-rows: 6fr 1fr;
     }
-    .design-name {
+    a.design-name {
         min-width: 17rem;
         text-align: center;
         background-position-x: center;
         font-size: 1.2rem;
     }
-    .designer-name,
-    .designer-name::before {
+    a.designer-name,
+    a.designer-name::before {
         font-size: 1rem;
         text-align: center;
     }

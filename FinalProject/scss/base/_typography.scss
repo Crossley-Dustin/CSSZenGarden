@@ -29,14 +29,21 @@ h3 {
 p,
 li {
   font-family: $secondary-font;
-  font-size: 1rem;
+  font-size: .99rem;
   font-weight: 300;
   line-height: 1.4;
   color: darken($color-4, 15%);
 }
 
 a {
-  color: $color-6;
+  color: $greenlinks;
   text-decoration: none;
+  &:link {
+    color: $greenlinks;
+  }
+  &:hover {
+    font-weight: 500;
+    color: $color-7;
+  }
 }
 

@@ -57,6 +57,9 @@ abbr {
             line-height: 1.5rem;
             a {
                 color: #fff;
+                &:hover {
+                    font-weight: 900;
+                    font-size: .9rem;                }
             }
         }
     }
@@ -65,7 +68,7 @@ abbr {
 #zen-resources {
     content: ' ';
     background: url(assets/sign2-01.svg) no-repeat top left;
-    height: 260px;
+    height: 280px;
     grid-row: 2;
     background-repeat: no-repeat;
     position: relative;
@@ -84,6 +87,10 @@ abbr {
             line-height: 1.5rem;
             a {
                 color: #fff;
+                &:hover {
+                    font-weight: 900;
+                    font-size: .9rem;
+                }
             }
         }
     }
