@@ -1,7 +1,7 @@
 // aside container
 .wrapper {
     display: grid;
-    grid-template-columns: 1;
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     grid-template-areas: "archives" "resources" "designs";
 }

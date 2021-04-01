@@ -73,7 +73,7 @@ section.intro {
 //grid two for div .supporting - about, participation, benefits, requirements and footer
 .supporting {
     display: grid;
-    grid-template-columns: 1;
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
 }
 
